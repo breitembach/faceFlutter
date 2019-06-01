@@ -1,46 +1,49 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_database/firebase_database.dart';
 
-Widget get BottomBarHome => BottomNavigationBar(
+final notesReference = FirebaseDatabase.instance.reference();
+
+Widget get bottomBarHome => BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
-            backgroundColor: Colors.blue,
+            backgroundColor: Colors.blueAccent,
             icon: Icon(
               Icons.home,
               size: 30,
-              color: Colors.white,
+              color: Colors.blueAccent,
             ),
             title: Text(
               "Home",
-              style: TextStyle(fontSize: 30, color: Colors.white),
+              style: TextStyle(fontSize: 18, color: Colors.blueAccent),
             ),
             activeIcon: Icon(
               Icons.home,
               size: 30,
-              color: Colors.red,
+              color: Colors.blueAccent,
             ),
           ),
           BottomNavigationBarItem(
-            backgroundColor: Colors.blue,
+            backgroundColor: Colors.blueAccent,
             icon: Icon(
               Icons.book,
               size: 30,
-              color: Colors.white,
+              color: Colors.blueAccent,
             ),
             title: Text(
               "Articles",
-              style: TextStyle(fontSize: 30, color: Colors.red),
+              style: TextStyle(fontSize: 18, color: Colors.blueAccent),
             ),
           ),
           BottomNavigationBarItem(
-            backgroundColor: Colors.blue,
+            backgroundColor: Colors.blueAccent,
             icon: Icon(
               Icons.assignment_ind,
               size: 30,
-              color: Colors.red,
+              color: Colors.blueAccent,
             ),
             title: Text(
               "User",
-              style: TextStyle(fontSize: 30, color: Colors.white),
+              style: TextStyle(fontSize: 18, color: Colors.blueAccent),
             ),
           ),
         ],

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "938747524214",
+    "firebase_url": "https://faceflutter-d3be0.firebaseio.com",
+    "project_id": "faceflutter-d3be0",
+    "storage_bucket": "faceflutter-d3be0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:938747524214:android:adfd75c240193f24",
+        "android_client_info": {
+          "package_name": "com.example.faceflutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "938747524214-7qpu1mhumb397ihfthmo4jrmrhl784b6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBq7-P5YqQIZSdUVN4apNYitVAXfzqx664"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "938747524214-7qpu1mhumb397ihfthmo4jrmrhl784b6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
