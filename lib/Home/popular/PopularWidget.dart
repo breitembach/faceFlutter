@@ -5,8 +5,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:share/share.dart';
 
 
-
-
 class PopularWidget extends StatefulWidget {
   @override
   _PopularWidgetState createState() => _PopularWidgetState();
@@ -72,8 +70,8 @@ class _PopularWidgetState extends State<PopularWidget> {
                          Text("Shared")
                        ],
                      ),
-                     onPressed: () async {
-                      await Share.share('check out my website https://example.com');
+                     onPressed: () async{
+                      await Share.share('check out my website https://example.com',);
                      },
                    )
                  ],
