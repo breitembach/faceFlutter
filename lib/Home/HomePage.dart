@@ -20,7 +20,6 @@ class _HomePageState extends State<HomePage>
     _tabController = TabController(initialIndex: 0, length: 3,vsync: this);
     _tabController.addListener(() {
       currentPage = _tabController.index;
-      print(_tabController.index);
     });
     super.initState();
   }
