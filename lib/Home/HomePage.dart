@@ -15,7 +15,7 @@ class _HomePageState extends State<HomePage>
   int currentPage = 0;
   @override
   void initState() {
-    _tabController = TabController(initialIndex: 0, length: 3,vsync: this);
+    _tabController = TabController(initialIndex: 0, length: 3, vsync: this);
     _tabController.addListener(() {
       currentPage = _tabController.index;
     });
@@ -27,33 +27,32 @@ class _HomePageState extends State<HomePage>
     var childButtons = List<UnicornButton>();
     childButtons.add(UnicornButton(
         hasLabel: true,
-        labelText: "Editar",
+        labelText: "Novo Link",
         currentButton: FloatingActionButton(
-          heroTag: "train",
-          backgroundColor: Colors.redAccent,
+          heroTag: "Postar Links",
+          backgroundColor: Colors.blueAccent,
           mini: true,
           child: Icon(Icons.edit),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => PostLink(),
+              ),
+            );
+          },
         )));
 
     childButtons.add(UnicornButton(
+        hasLabel: true,
+        labelText: "Criar Post",
         currentButton: FloatingActionButton(
             heroTag: "Criar Post",
-            backgroundColor: Colors.greenAccent,
-            mini: true,
-            onPressed: () {},
-            child: Icon(Icons.create))));
-
-    childButtons.add(UnicornButton(
-        currentButton: FloatingActionButton(
-            heroTag: "directions",
             backgroundColor: Colors.blueAccent,
             mini: true,
             onPressed: () {},
-            child: Icon(Icons.directions_car))));
+            child: Icon(Icons.code))));
 
     return DefaultTabController(
-      
         length: 3,
         child: Scaffold(
             appBar: AppBar(
@@ -63,18 +62,8 @@ class _HomePageState extends State<HomePage>
                     icon: Icon(Icons.trending_up),
                     text: "Popular",
                   ),
-                  Tab(
-                    icon: Icon(
-                      Icons.link
-                    ), 
-                    text: "Links"
-                  ),
-                  Tab(
-                    icon: Icon(
-                      Icons.code
-                    ),
-                    text: "Componentes"
-                  ),
+                  Tab(icon: Icon(Icons.link), text: "Links"),
+                  Tab(icon: Icon(Icons.code), text: "Componentes"),
                 ],
               ),
 /*       bottomNavigationBar: BottomNavigationBar(
@@ -82,21 +71,18 @@ class _HomePageState extends State<HomePage>
         ), */
             ),
             floatingActionButton: UnicornDialer(
-              backgroundColor: Color.fromRGBO(0, 0, 0, 0.4),
-              parentButtonBackground: Colors.redAccent,
-              orientation: UnicornOrientation.VERTICAL,
-              parentButton: Icon(Icons.add),
-              childButtons: childButtons
-            ),
+                backgroundColor: Color.fromRGBO(0, 0, 0, 0.4),
+                parentButtonBackground: Colors.redAccent,
+                orientation: UnicornOrientation.VERTICAL,
+                parentButton: Icon(Icons.add),
+                childButtons: childButtons),
             body: TabBarView(
               //controller: _tabController,
               children: <Widget>[
                 PopularWidget(),
+                PostLink(),
                 ComponenteScreen(),
-                PostLink()
               ],
-            )
-          )
-        );
+            )));
   }
 }
