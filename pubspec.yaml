@@ -20,6 +20,7 @@ dependencies:
   flutter:
     sdk: flutter
   dio: ^2.1.6
+  unicorndial: ^1.1.5
   firebase: ^5.0.3
   firebase_core: ^0.4.0+3
   firebase_storage: ^3.0.0

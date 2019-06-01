@@ -1,6 +1,8 @@
+import 'package:faceflutter/Home/PopularScreen.dart';
 import 'package:faceflutter/Home/TabBarTopHome.dart';
 import 'package:faceflutter/Home/bottomBarHome.dart';
 import 'package:flutter/material.dart';
+import 'package:unicorndial/unicorndial.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -9,19 +11,48 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin{
    TabController _tabController;
+  
 
+    
    @override
   void initState() {
-    //_tabController = TabController(initialIndex: 0, vsync: this, length: tabBarTopHome().length );
+    
     super.initState();
   }
   @override
   Widget build(BuildContext context) {
+    var childButtons = List<UnicornButton>();
+    childButtons.add(UnicornButton(
+        hasLabel: true,
+        labelText: "Editar",
+        currentButton: FloatingActionButton(
+          heroTag: "train",
+          backgroundColor: Colors.redAccent,
+          mini: true,
+          child: Icon(Icons.edit),
+          onPressed: () {},
+        )));
+
+    childButtons.add(UnicornButton(
+        currentButton: FloatingActionButton(
+            heroTag: "Criar Post",
+            backgroundColor: Colors.greenAccent,
+            mini: true,
+            onPressed: () {},
+            child: Icon(Icons.create))));
+
+    childButtons.add(UnicornButton(
+        currentButton: FloatingActionButton(
+            heroTag: "directions",
+            backgroundColor: Colors.blueAccent,
+            mini: true,
+            onPressed: () {},
+            child: Icon(Icons.directions_car))));
+
     return DefaultTabController(
       length: 3,
         child: Scaffold(
         appBar: AppBar(
-
           bottom: TabBar(
             tabs: [
               Tab(icon: Icon(Icons.trending_up), text: "Popular",),
@@ -34,11 +65,16 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
 /*       bottomNavigationBar: BottomNavigationBar(
           items: bottomBarHome
         ), */
+        
+        floatingActionButton: UnicornDialer(
+            backgroundColor: Color.fromRGBO(255, 255, 255, 0.6),
+            parentButtonBackground: Colors.redAccent,
+            orientation: UnicornOrientation.VERTICAL,
+            parentButton: Icon(Icons.add),
+            childButtons: childButtons),
         body: TabBarView(
           children: <Widget>[
-            Text("data"),
-            Text("data"),
-            Text("data")
+            PopularScreen()
           ],
         )
       ),
