@@ -1,12 +1,11 @@
+
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
 
-final notesReference = FirebaseDatabase.instance.reference();
-
-Widget get bottomBarHome => BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-            backgroundColor: Colors.blueAccent,
+List<BottomNavigationBarItem> get bottomBarHome => List<BottomNavigationBarItem>.from(
+[
+  BottomNavigationBarItem(
+            backgroundColor: Colors.blue,
             icon: Icon(
               Icons.home,
               size: 30,
@@ -45,6 +44,7 @@ Widget get bottomBarHome => BottomNavigationBar(
               "User",
               style: TextStyle(fontSize: 18, color: Colors.blueAccent),
             ),
-          ),
-        ],
-      );
+          )
+]  
+);
+          
