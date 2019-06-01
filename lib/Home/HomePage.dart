@@ -1,7 +1,8 @@
 import 'package:faceflutter/Home/componente/ComponenteScreen.dart';
-import 'package:faceflutter/Home/popular/PopularScreen.dart';
 import 'package:faceflutter/Home/TabBarTopHome.dart';
 import 'package:faceflutter/Home/bottomBarHome.dart';
+import 'package:faceflutter/Home/popular/PopularWidget.dart';
+import 'package:faceflutter/post/PostLink.dart';
 import 'package:flutter/material.dart';
 import 'package:unicorndial/unicorndial.dart';
 
@@ -13,9 +14,14 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
   TabController _tabController;
-
+  int currentPage = 0;
   @override
   void initState() {
+    _tabController = TabController(initialIndex: 0, length: 3,vsync: this);
+    _tabController.addListener(() {
+      currentPage = _tabController.index;
+      print(_tabController.index);
+    });
     super.initState();
   }
 
@@ -50,6 +56,7 @@ class _HomePageState extends State<HomePage>
             child: Icon(Icons.directions_car))));
 
     return DefaultTabController(
+      
         length: 3,
         child: Scaffold(
             appBar: AppBar(
@@ -59,8 +66,18 @@ class _HomePageState extends State<HomePage>
                     icon: Icon(Icons.trending_up),
                     text: "Popular",
                   ),
-                  Tab(icon: Icon(Icons.link), text: "Links"),
-                  Tab(icon: Icon(Icons.code), text: "Componentes"),
+                  Tab(
+                    icon: Icon(
+                      Icons.link
+                    ), 
+                    text: "Links"
+                  ),
+                  Tab(
+                    icon: Icon(
+                      Icons.code
+                    ),
+                    text: "Componentes"
+                  ),
                 ],
               ),
 /*       bottomNavigationBar: BottomNavigationBar(
@@ -68,17 +85,21 @@ class _HomePageState extends State<HomePage>
         ), */
             ),
             floatingActionButton: UnicornDialer(
-                backgroundColor: Color.fromRGBO(0, 0, 0, 0.4),
-                parentButtonBackground: Colors.redAccent,
-                orientation: UnicornOrientation.VERTICAL,
-                parentButton: Icon(Icons.add),
-                childButtons: childButtons),
+              backgroundColor: Color.fromRGBO(0, 0, 0, 0.4),
+              parentButtonBackground: Colors.redAccent,
+              orientation: UnicornOrientation.VERTICAL,
+              parentButton: Icon(Icons.add),
+              childButtons: childButtons
+            ),
             body: TabBarView(
+              controller: _tabController,
               children: <Widget>[
-                PopularScreen(),
-                PopularScreen(),
-                ComponenteScreen()
+                PopularWidget(),
+                ComponenteScreen(),
+                PostLink()
               ],
-            )));
+            )
+          )
+        );
   }
 }
