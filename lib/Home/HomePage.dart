@@ -1,6 +1,7 @@
 import 'package:faceflutter/Home/PopularScreen.dart';
 import 'package:faceflutter/Home/TabBarTopHome.dart';
 import 'package:faceflutter/Home/bottomBarHome.dart';
+import 'package:faceflutter/post/PostLink.dart';
 import 'package:flutter/material.dart';
 import 'package:unicorndial/unicorndial.dart';
 
@@ -23,13 +24,19 @@ class _HomePageState extends State<HomePage>
     var childButtons = List<UnicornButton>();
     childButtons.add(UnicornButton(
         hasLabel: true,
-        labelText: "Editar",
+        labelText: "Novo Link",
         currentButton: FloatingActionButton(
           heroTag: "train",
           backgroundColor: Colors.redAccent,
           mini: true,
           child: Icon(Icons.edit),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => PostLink(),
+              ),
+            );
+          },
         )));
 
     childButtons.add(UnicornButton(
@@ -73,7 +80,7 @@ class _HomePageState extends State<HomePage>
                 parentButton: Icon(Icons.add),
                 childButtons: childButtons),
             body: TabBarView(
-              children: <Widget>[PopularScreen()],
+              children: <Widget>[PopularScreen(), Text(""), Text("")],
             )));
   }
 }
