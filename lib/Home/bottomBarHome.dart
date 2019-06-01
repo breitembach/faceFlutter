@@ -1,8 +1,9 @@
+import 'package:flutter/cupertino.dart' as prefix0;
 import 'package:flutter/material.dart';
 
-Widget get BottomBarHome => BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
+List<BottomNavigationBarItem> get bottomBarHome => List<BottomNavigationBarItem>.from(
+[
+  BottomNavigationBarItem(
             backgroundColor: Colors.blue,
             icon: Icon(
               Icons.home,
@@ -42,6 +43,7 @@ Widget get BottomBarHome => BottomNavigationBar(
               "User",
               style: TextStyle(fontSize: 30, color: Colors.white),
             ),
-          ),
-        ],
-      );
+          )
+]  
+);
+          
