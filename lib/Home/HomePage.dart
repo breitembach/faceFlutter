@@ -6,28 +6,29 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin{
-   TabController _tabController;
+class _HomePageState extends State<HomePage>
+    with SingleTickerProviderStateMixin {
+  TabController _tabController;
 
-   @override
+  @override
   void initState() {
     //_tabController = TabController(initialIndex: 0, vsync: this, length:  );
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       appBar: AppBar(
         bottom: PreferredSize(
-         child: TabBar(
-           controller: _tabController,
-           tabs: <Widget>[
-             Tab(
-               child: Text("dasdadds"),
-             )
-           ],
-         ), 
+          child: TabBar(
+            controller: _tabController,
+            tabs: <Widget>[
+              Tab(
+                child: Text("dasdadds"),
+              )
+            ],
+          ),
         ),
         title: Text("faceFlutter"),
       ),
