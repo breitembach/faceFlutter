@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ComponenteScreen extends StatefulWidget {
   @override
@@ -15,40 +16,40 @@ class _ComponenteScreenState extends State<ComponenteScreen> {
           padding: const EdgeInsets.all(10.0),
           child: Column(
             children: <Widget>[
-              Card(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: <Widget>[
-                    SizedBox(
-                      width: 120.0,
-                      height: 80.0,
-                      child: Image.network(
-                          "https://www.computersciencedegreehub.com/wp-content/uploads/2016/02/what-is-coding-300x200.jpg"),
-                    ),
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 32.0),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            Text(
+              GestureDetector(
+          onTap: () {
+           
+          },
+          child: Card(
+              child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Image.network(
+                  "http://www.coderzheaven.com/wp-content/uploads/2019/01/Screen-Shot-2019-01-27-at-11.45.17-AM.png"),
+              Padding(
+                padding: EdgeInsets.all(10),
+                child: Text(
                               "Componente de radio button",
                               style: TextStyle(
-                                  fontSize: 14, fontWeight: FontWeight.bold),
+                                  fontSize: 18, fontWeight: FontWeight.bold),
                             ),
-                            Text(
-                              '''Descrição do componente de radio button''',
-                              style: TextStyle(fontSize: 13),
-                              maxLines: 3,
-                            )
-                          ],
-                        ),
-                      ),
-                    )
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 10.0, bottom: 15),
+                child: Row(
+                  children: <Widget>[
+                    Text(
+                                '''Descrição do componente de radio button''',
+                                style: TextStyle(fontSize: 13),
+                                maxLines: 3,
+                              )
                   ],
                 ),
-              )
+              ),
+            ],
+          )),
+          
+        )
             ],
           ),
         );
