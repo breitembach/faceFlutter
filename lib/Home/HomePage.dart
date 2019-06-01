@@ -1,3 +1,4 @@
+import 'package:faceflutter/Home/ComponenteScreen.dart';
 import 'package:faceflutter/Home/popular/PopularScreen.dart';
 import 'package:faceflutter/Home/TabBarTopHome.dart';
 import 'package:faceflutter/Home/bottomBarHome.dart';
@@ -76,7 +77,7 @@ class _HomePageState extends State<HomePage>
               children: <Widget>[
                 PopularScreen(),
                 PopularScreen(),
-                Text("asdsd")
+                ComponenteScreen()
               ],
             )));
   }
