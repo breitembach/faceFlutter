@@ -30,30 +30,24 @@ class _HomePageState extends State<HomePage>
     var childButtons = List<UnicornButton>();
     childButtons.add(UnicornButton(
         hasLabel: true,
-        labelText: "Editar",
+        labelText: "Postar Links",
         currentButton: FloatingActionButton(
-          heroTag: "train",
-          backgroundColor: Colors.redAccent,
+          heroTag: "Postar Links",
+          backgroundColor: Colors.blueAccent,
           mini: true,
-          child: Icon(Icons.edit),
+          child: Icon(Icons.link),
           onPressed: () {},
         )));
 
     childButtons.add(UnicornButton(
+        hasLabel: true,
+        labelText: "Criar Post",
         currentButton: FloatingActionButton(
             heroTag: "Criar Post",
-            backgroundColor: Colors.greenAccent,
-            mini: true,
-            onPressed: () {},
-            child: Icon(Icons.create))));
-
-    childButtons.add(UnicornButton(
-        currentButton: FloatingActionButton(
-            heroTag: "directions",
             backgroundColor: Colors.blueAccent,
             mini: true,
             onPressed: () {},
-            child: Icon(Icons.directions_car))));
+            child: Icon(Icons.code))));
 
     return DefaultTabController(
       
@@ -95,8 +89,8 @@ class _HomePageState extends State<HomePage>
               controller: _tabController,
               children: <Widget>[
                 PopularWidget(),
+                PostLink(),
                 ComponenteScreen(),
-                PostLink()
               ],
             )
           )
