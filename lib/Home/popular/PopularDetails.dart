@@ -23,7 +23,6 @@ class _PopularDetailsState extends State<PopularDetails> {
               itemCount: 3,
               itemBuilder: (BuildContext context, int index) {
               return Card(
-                
                 child: Text("dasdads"),
               );
              },

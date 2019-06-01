@@ -2,6 +2,9 @@ import 'package:faceflutter/Home/popular/PopularCommentsScreen.dart';
 import 'package:faceflutter/Home/popular/PopularDetails.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:share/share.dart';
+
+
 
 
 class PopularWidget extends StatefulWidget {
@@ -46,7 +49,7 @@ class _PopularWidgetState extends State<PopularWidget> {
                      child: Row(
                        children: <Widget>[
                          Icon(FontAwesomeIcons.thumbsUp),
-                         Text("Curtir")
+                         Text("Like")
                        ],
                      ),
                      onPressed: (){},
@@ -55,11 +58,22 @@ class _PopularWidgetState extends State<PopularWidget> {
                      child: Row(
                        children: <Widget>[
                          Icon(Icons.description),
-                         Text("Comentar")
+                         Text("Comment")
                        ],
                      ),
                      onPressed: (){
                        Navigator.push(context, MaterialPageRoute(builder: (context) => PopularDetails()));
+                     },
+                   ),
+                   FlatButton(
+                     child: Row(
+                       children: <Widget>[
+                         Icon(Icons.share),
+                         Text("Shared")
+                       ],
+                     ),
+                     onPressed: () async {
+                      await Share.share('check out my website https://example.com');
                      },
                    )
                  ],

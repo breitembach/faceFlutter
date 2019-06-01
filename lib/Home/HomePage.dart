@@ -3,6 +3,7 @@ import 'package:faceflutter/Home/popular/PopularWidget.dart';
 import 'package:faceflutter/post/PostLink.dart';
 import 'package:flutter/material.dart';
 import 'package:unicorndial/unicorndial.dart';
+import 'package:share/share.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -56,6 +57,8 @@ class _HomePageState extends State<HomePage>
         length: 3,
         child: Scaffold(
             appBar: AppBar(
+              title: Text("FaceFlutter"),
+              centerTitle: true,
               bottom: TabBar(
                 tabs: [
                   Tab(
@@ -80,7 +83,7 @@ class _HomePageState extends State<HomePage>
               //controller: _tabController,
               children: <Widget>[
                 PopularWidget(),
-                PostLink(),
+                //PostLink(),
                 ComponenteScreen(),
               ],
             )));
