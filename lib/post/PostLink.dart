@@ -107,7 +107,7 @@ class _PostLinkState extends State<PostLink> {
                       labelText: 'Imagem',
                       hintText: "Digite a URL da imagem",
                     ),
-                    controller: _linkControler,
+                    controller: _imageUrlControler,
                     focusNode: _imageFocusNode,
                     keyboardType: TextInputType.url,
                     onSubmitted: _onImageChange,
