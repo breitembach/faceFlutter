@@ -19,14 +19,14 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 3,
-          child: Scaffold(
-        
+        child: Scaffold(
         appBar: AppBar(
+
           bottom: TabBar(
             tabs: [
-              Tab(icon: Icon(Icons.directions_car)),
-              Tab(icon: Icon(Icons.directions_transit)),
-              Tab(icon: Icon(Icons.directions_bike)),
+              Tab(icon: Icon(Icons.trending_up), text: "Popular",),
+              Tab(icon: Icon(Icons.link), text: "Links"),
+              Tab(icon: Icon(Icons.code), text: "Componentes"),
             ],
           ),
           title: Text("faceFlutter"),
