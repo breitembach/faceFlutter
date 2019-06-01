@@ -2,6 +2,7 @@ import 'package:faceflutter/Home/ComponenteScreen.dart';
 import 'package:faceflutter/Home/TabBarTopHome.dart';
 import 'package:faceflutter/Home/bottomBarHome.dart';
 import 'package:faceflutter/Home/popular/PopularWidget.dart';
+import 'package:faceflutter/post/PostLink.dart';
 import 'package:flutter/material.dart';
 import 'package:unicorndial/unicorndial.dart';
 
@@ -65,8 +66,18 @@ class _HomePageState extends State<HomePage>
                     icon: Icon(Icons.trending_up),
                     text: "Popular",
                   ),
-                  Tab(icon: Icon(Icons.link), text: "Links"),
-                  Tab(icon: Icon(Icons.code), text: "Componentes"),
+                  Tab(
+                    icon: Icon(
+                      Icons.link
+                    ), 
+                    text: "Links"
+                  ),
+                  Tab(
+                    icon: Icon(
+                      Icons.code
+                    ),
+                    text: "Componentes"
+                  ),
                 ],
               ),
 /*       bottomNavigationBar: BottomNavigationBar(
@@ -74,18 +85,21 @@ class _HomePageState extends State<HomePage>
         ), */
             ),
             floatingActionButton: UnicornDialer(
-                backgroundColor: Color.fromRGBO(0, 0, 0, 0.4),
-                parentButtonBackground: Colors.redAccent,
-                orientation: UnicornOrientation.VERTICAL,
-                parentButton: Icon(Icons.add),
-                childButtons: childButtons),
+              backgroundColor: Color.fromRGBO(0, 0, 0, 0.4),
+              parentButtonBackground: Colors.redAccent,
+              orientation: UnicornOrientation.VERTICAL,
+              parentButton: Icon(Icons.add),
+              childButtons: childButtons
+            ),
             body: TabBarView(
               controller: _tabController,
               children: <Widget>[
                 PopularWidget(),
                 ComponenteScreen(),
-                Text("asdsd")
+                PostLink()
               ],
-            )));
+            )
+          )
+        );
   }
 }
