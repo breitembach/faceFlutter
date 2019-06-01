@@ -1,6 +1,4 @@
 import 'package:faceflutter/Home/componente/ComponenteScreen.dart';
-import 'package:faceflutter/Home/TabBarTopHome.dart';
-import 'package:faceflutter/Home/bottomBarHome.dart';
 import 'package:faceflutter/Home/popular/PopularWidget.dart';
 import 'package:faceflutter/post/PostLink.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +18,6 @@ class _HomePageState extends State<HomePage>
     _tabController = TabController(initialIndex: 0, length: 3, vsync: this);
     _tabController.addListener(() {
       currentPage = _tabController.index;
-      print(_tabController.index);
     });
     super.initState();
   }
@@ -80,7 +77,7 @@ class _HomePageState extends State<HomePage>
                 parentButton: Icon(Icons.add),
                 childButtons: childButtons),
             body: TabBarView(
-              controller: _tabController,
+              //controller: _tabController,
               children: <Widget>[
                 PopularWidget(),
                 PostLink(),

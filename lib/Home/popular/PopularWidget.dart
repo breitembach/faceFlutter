@@ -1,3 +1,4 @@
+import 'package:faceflutter/Home/popular/PopularCommentsScreen.dart';
 import 'package:faceflutter/Home/popular/PopularDetails.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -18,12 +19,10 @@ class _PopularWidgetState extends State<PopularWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      padding: EdgeInsets.all(10),
-      shrinkWrap: true,
-      // mainAxisSize: MainAxisSize.max,
-      children: <Widget>[
-        GestureDetector(
+    return ListView.builder(
+      itemCount: 3,
+      itemBuilder: (context, i) {
+        return GestureDetector(
           onTap: () {
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => PopularDetails()));
