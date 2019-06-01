@@ -1,13 +1,14 @@
+import 'package:faceflutter/Home/popular/PopularDetails.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 
-class PopularScreen extends StatefulWidget {
+class PopularWidget extends StatefulWidget {
   @override
-  _PopularScreenState createState() => _PopularScreenState();
+  _PopularWidgetState createState() => _PopularWidgetState();
 }
 
-class _PopularScreenState extends State<PopularScreen> {
+class _PopularWidgetState extends State<PopularWidget> {
   Future<List<Card>> popularPosts;
 
   @override
@@ -23,44 +24,49 @@ class _PopularScreenState extends State<PopularScreen> {
       shrinkWrap: true,
       // mainAxisSize: MainAxisSize.max,
       children: <Widget>[
-        Card(
-          child: Column(
-           crossAxisAlignment: CrossAxisAlignment.center,
-           children: <Widget>[
-             Padding(
-               padding: EdgeInsets.all(5),
-               child: Text("Título da postagem"),
-             ),
-             Image.network("https://cdn-images-1.medium.com/max/2400/1*73IgUxPfyXUKZAaIXgutrw.png"),
-             Padding(
-               padding: EdgeInsets.all(10),
-               child: Text("Alguma Descrição",style: TextStyle(color: Colors.grey[500]),),
-             ),
-             Row(
-               children: <Widget>[
-                 FlatButton(
-                   child: Row(
-                     children: <Widget>[
-                       Icon(FontAwesomeIcons.thumbsUp),
-                       Text("Curtir")
-                     ],
+        GestureDetector(
+          onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => PopularDetails()));
+          },
+          child: Card(
+            child: Column(
+             crossAxisAlignment: CrossAxisAlignment.center,
+             children: <Widget>[
+               Padding(
+                 padding: EdgeInsets.all(5),
+                 child: Text("Título da postagem"),
+               ),
+               Image.network("https://cdn-images-1.medium.com/max/2400/1*73IgUxPfyXUKZAaIXgutrw.png"),
+               Padding(
+                 padding: EdgeInsets.all(10),
+                 child: Text("Alguma Descrição",style: TextStyle(color: Colors.grey[500]),),
+               ),
+               Row(
+                 children: <Widget>[
+                   FlatButton(
+                     child: Row(
+                       children: <Widget>[
+                         Icon(FontAwesomeIcons.thumbsUp),
+                         Text("Curtir")
+                       ],
+                     ),
+                     onPressed: (){},
                    ),
-                   onPressed: (){},
-                 ),
-                 FlatButton(
-                   child: Row(
-                     children: <Widget>[
-                       Icon(Icons.description),
-                       Text("Comentar")
-                     ],
-                   ),
-                   onPressed: (){},
-                 )
-               ],
-             ),
-             
-           ], 
-          )
+                   FlatButton(
+                     child: Row(
+                       children: <Widget>[
+                         Icon(Icons.description),
+                         Text("Comentar")
+                       ],
+                     ),
+                     onPressed: (){},
+                   )
+                 ],
+               ),
+               
+             ], 
+            )
+          ),
         ),
         Card(
           child: Column(

@@ -1,6 +1,7 @@
-import 'package:faceflutter/Home/popular/PopularScreen.dart';
+import 'package:faceflutter/Home/ComponenteScreen.dart';
 import 'package:faceflutter/Home/TabBarTopHome.dart';
 import 'package:faceflutter/Home/bottomBarHome.dart';
+import 'package:faceflutter/Home/popular/PopularWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:unicorndial/unicorndial.dart';
 
@@ -12,9 +13,14 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
   TabController _tabController;
-
+  int currentPage = 0;
   @override
   void initState() {
+    _tabController = TabController(initialIndex: 0, length: 3,vsync: this);
+    _tabController.addListener(() {
+      currentPage = _tabController.index;
+      print(_tabController.index);
+    });
     super.initState();
   }
 
@@ -49,6 +55,7 @@ class _HomePageState extends State<HomePage>
             child: Icon(Icons.directions_car))));
 
     return DefaultTabController(
+      
         length: 3,
         child: Scaffold(
             appBar: AppBar(
@@ -73,9 +80,10 @@ class _HomePageState extends State<HomePage>
                 parentButton: Icon(Icons.add),
                 childButtons: childButtons),
             body: TabBarView(
+              controller: _tabController,
               children: <Widget>[
-                PopularScreen(),
-                PopularScreen(),
+                PopularWidget(),
+                ComponenteScreen(),
                 Text("asdsd")
               ],
             )));
