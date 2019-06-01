@@ -1,4 +1,4 @@
-import 'package:faceflutter/Home/PopularScreen.dart';
+import 'package:faceflutter/Home/popular/PopularScreen.dart';
 import 'package:faceflutter/Home/TabBarTopHome.dart';
 import 'package:faceflutter/Home/bottomBarHome.dart';
 import 'package:flutter/material.dart';
@@ -67,13 +67,17 @@ class _HomePageState extends State<HomePage>
         ), */
             ),
             floatingActionButton: UnicornDialer(
-                backgroundColor: Color.fromRGBO(255, 255, 255, 0.6),
+                backgroundColor: Color.fromRGBO(0, 0, 0, 0.4),
                 parentButtonBackground: Colors.redAccent,
                 orientation: UnicornOrientation.VERTICAL,
                 parentButton: Icon(Icons.add),
                 childButtons: childButtons),
             body: TabBarView(
-              children: <Widget>[PopularScreen()],
+              children: <Widget>[
+                PopularScreen(),
+                PopularScreen(),
+                Text("asdsd")
+              ],
             )));
   }
 }
