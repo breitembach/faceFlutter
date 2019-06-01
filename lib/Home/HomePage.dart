@@ -1,6 +1,7 @@
-import 'package:faceflutter/Home/PopularScreen.dart';
+import 'package:faceflutter/Home/componente/ComponenteScreen.dart';
 import 'package:faceflutter/Home/TabBarTopHome.dart';
 import 'package:faceflutter/Home/bottomBarHome.dart';
+import 'package:faceflutter/Home/popular/PopularWidget.dart';
 import 'package:faceflutter/post/PostLink.dart';
 import 'package:flutter/material.dart';
 import 'package:unicorndial/unicorndial.dart';
@@ -13,9 +14,14 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
   TabController _tabController;
-
+  int currentPage = 0;
   @override
   void initState() {
+    _tabController = TabController(initialIndex: 0, length: 3, vsync: this);
+    _tabController.addListener(() {
+      currentPage = _tabController.index;
+      print(_tabController.index);
+    });
     super.initState();
   }
 
@@ -74,13 +80,18 @@ class _HomePageState extends State<HomePage>
         ), */
             ),
             floatingActionButton: UnicornDialer(
-                backgroundColor: Color.fromRGBO(255, 255, 255, 0.6),
+                backgroundColor: Color.fromRGBO(0, 0, 0, 0.4),
                 parentButtonBackground: Colors.redAccent,
                 orientation: UnicornOrientation.VERTICAL,
                 parentButton: Icon(Icons.add),
                 childButtons: childButtons),
             body: TabBarView(
-              children: <Widget>[PopularScreen(), Text(""), Text("")],
+              controller: _tabController,
+              children: <Widget>[
+                PopularWidget(),
+                ComponenteScreen(),
+                PostLink()
+              ],
             )));
   }
 }
