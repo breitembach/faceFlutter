@@ -59,7 +59,7 @@ class _PopularWidgetState extends State<PopularWidget> {
                        ],
                      ),
                      onPressed: (){
-                       Navigator.push(context, MaterialPageRoute(builder: (context) => PopularCommentsScreen()));
+                       Navigator.push(context, MaterialPageRoute(builder: (context) => PopularDetails()));
                      },
                    )
                  ],

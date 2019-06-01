@@ -10,9 +10,11 @@ class _PopularCommentsScreenState extends State<PopularCommentsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(""),
+        title: Text("Comentários"),
       ),
-      body: Text(""),
+      body: Column(
+        
+      ),
     );
   }
 }

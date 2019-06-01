@@ -1,6 +1,4 @@
 import 'package:faceflutter/Home/componente/ComponenteScreen.dart';
-import 'package:faceflutter/Home/TabBarTopHome.dart';
-import 'package:faceflutter/Home/bottomBarHome.dart';
 import 'package:faceflutter/Home/popular/PopularWidget.dart';
 import 'package:faceflutter/post/PostLink.dart';
 import 'package:flutter/material.dart';
@@ -91,7 +89,7 @@ class _HomePageState extends State<HomePage>
               childButtons: childButtons
             ),
             body: TabBarView(
-              controller: _tabController,
+              //controller: _tabController,
               children: <Widget>[
                 PopularWidget(),
                 ComponenteScreen(),
