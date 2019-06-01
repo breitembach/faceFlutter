@@ -32,8 +32,8 @@ class _HomePageState extends State<HomePage>
         hasLabel: true,
         labelText: "Novo Link",
         currentButton: FloatingActionButton(
-          heroTag: "train",
-          backgroundColor: Colors.redAccent,
+          heroTag: "Postar Links",
+          backgroundColor: Colors.blueAccent,
           mini: true,
           child: Icon(Icons.edit),
           onPressed: () {
@@ -46,20 +46,14 @@ class _HomePageState extends State<HomePage>
         )));
 
     childButtons.add(UnicornButton(
+        hasLabel: true,
+        labelText: "Criar Post",
         currentButton: FloatingActionButton(
             heroTag: "Criar Post",
-            backgroundColor: Colors.greenAccent,
-            mini: true,
-            onPressed: () {},
-            child: Icon(Icons.create))));
-
-    childButtons.add(UnicornButton(
-        currentButton: FloatingActionButton(
-            heroTag: "directions",
             backgroundColor: Colors.blueAccent,
             mini: true,
             onPressed: () {},
-            child: Icon(Icons.directions_car))));
+            child: Icon(Icons.code))));
 
     return DefaultTabController(
         length: 3,
@@ -89,8 +83,8 @@ class _HomePageState extends State<HomePage>
               controller: _tabController,
               children: <Widget>[
                 PopularWidget(),
+                PostLink(),
                 ComponenteScreen(),
-                PostLink()
               ],
             )));
   }
