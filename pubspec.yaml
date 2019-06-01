@@ -26,7 +26,6 @@ dependencies:
   firebase_storage: ^3.0.0
   firebase_database: ^3.0.2
   uuid: ^2.0.1
-  image_picker: ^0.6.0+8
   rxdart: ^0.22.0
   font_awesome_flutter:
 
